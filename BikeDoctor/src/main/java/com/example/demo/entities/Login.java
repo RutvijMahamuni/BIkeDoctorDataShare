@@ -23,6 +23,9 @@ public class Login {
 	@ManyToOne
 	@JoinColumn(name="user_type_id")
 	Roles role;
+	
+	@ManyToOne
+	@JoinColumn(name="security_question_id")
 
 	
 	public String getUsername() {
