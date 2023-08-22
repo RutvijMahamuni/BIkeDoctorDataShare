@@ -18,14 +18,18 @@ public class Login {
 	@Column
 	public String username;
 	@Column
-	public String password;
+	public String password; 
+	@Column
+	public String answer;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="user_type_id")
 	Roles role;
 	
 	@ManyToOne
-	@JoinColumn(name="security_question_id")
+	@JoinColumn(name="security_ques_id")
+	SecurityQuestion secques;
 
 	
 	public String getUsername() {
@@ -53,17 +57,48 @@ public class Login {
 		this.role = role;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public SecurityQuestion getSecques() {
+		return secques;
+	}
+
+	public void setSecques(SecurityQuestion secques) {
+		this.secques = secques;
+	}
+
 	public Login() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Login(String username, String password) {
+	public Login(String username, String password, String answer, Roles role, SecurityQuestion secques) {
 		super();
+		
 		this.username = username;
 		this.password = password;
-		
+		this.answer = answer;
+		this.role = role;
+		this.secques = secques;
 	}
+
+	
+		
+	
 	
 	
 	

@@ -17,4 +17,9 @@ public class ServiceCentreService {
 	{
 		return servcenrepo.findAll();
 	}
+	
+	public ServiceCentre save(ServiceCentre servicecentre)
+	{
+		return servcenrepo.save(servicecentre);
+	}
 }

@@ -25,4 +25,9 @@ public class LoginService {
 
 		return l;
 	}
+	
+	public Login save(Login login)
+	{
+		return loginrep.save(login);
+	}
 }
