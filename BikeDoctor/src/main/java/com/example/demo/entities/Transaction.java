@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,7 +29,7 @@ public class Transaction {
 	@JoinColumn(name="payment_mode_id")
 	PaymentMode paymode;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="customer_id")
 	Customer customer;
 
@@ -86,10 +85,9 @@ public class Transaction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Transaction(int id, int amount, Date date, String transaction_number, PaymentMode paymode,
+	public Transaction(int amount, Date date, String transaction_number, PaymentMode paymode,
 			Customer customer) {
 		super();
-		this.id = id;
 		this.amount = amount;
 		this.date = date;
 		this.transaction_number = transaction_number;

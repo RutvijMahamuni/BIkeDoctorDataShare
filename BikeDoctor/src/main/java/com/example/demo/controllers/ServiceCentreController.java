@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Area;
 import com.example.demo.entities.Login;
-import com.example.demo.entities.Roles;
+import com.example.demo.entities.Role;
 import com.example.demo.entities.SecurityQuestion;
 import com.example.demo.entities.ServiceCentre;
 import com.example.demo.entities.ServiceCentreRegistration;
 import com.example.demo.services.AreaService;
 import com.example.demo.services.LoginService;
-import com.example.demo.services.RolesService;
+import com.example.demo.services.RoleService;
 import com.example.demo.services.SecurityQuestionService;
 import com.example.demo.services.ServiceCentreService;
 
@@ -28,7 +28,7 @@ public class ServiceCentreController {
 	@Autowired
 	ServiceCentreService servcenservice;
 	@Autowired
-	RolesService roleserv;
+	RoleService roleserv;
 	@Autowired
 	AreaService areaserv;
 	@Autowired
@@ -46,7 +46,7 @@ public class ServiceCentreController {
 	public ServiceCentre save(@RequestBody ServiceCentreRegistration servicecentre)
 	{
 		System.out.println(servicecentre);
-		Roles role=roleserv.getRoles(5);
+		Role role=roleserv.getRoles(5);
 		System.out.println(role);
 		SecurityQuestion secques=secquesserv.getsecques(servicecentre.getSecurity_quetion_id());
 		Area area=areaserv.getArea(servicecentre.getArea_id());

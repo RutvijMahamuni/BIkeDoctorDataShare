@@ -22,4 +22,9 @@ public class TransactionService {
 	{
 		return transactionrepo.save(transaction);
 	}
+	
+	public Transaction getById(int custid) {
+		return transactionrepo.findById(custid).get();
+		
+	}
 }

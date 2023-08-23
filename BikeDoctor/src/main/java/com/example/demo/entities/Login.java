@@ -25,7 +25,7 @@ public class Login {
 	
 	@ManyToOne
 	@JoinColumn(name="user_type_id")
-	Roles role;
+	Role role;
 	
 	@ManyToOne
 	@JoinColumn(name="security_ques_id")
@@ -49,11 +49,11 @@ public class Login {
 	}
 
 
-	public Roles getRole() {
+	public Role getRole() {
 		return role;
 	}
 
-	public void setRole(Roles role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 
@@ -86,7 +86,7 @@ public class Login {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Login(String username, String password, String answer, Roles role, SecurityQuestion secques) {
+	public Login(String username, String password, String answer, Role role, SecurityQuestion secques) {
 		super();
 		
 		this.username = username;
